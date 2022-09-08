@@ -1,5 +1,3 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import { useState } from 'react'
 
 const Home = () => {
@@ -12,12 +10,12 @@ const Home = () => {
     console.log("fetching nfts");
     const api_key = "sjt7W1vANjXjPBT-mzlf2euRI1_dFuNp"
     const baseURL = `https://eth-mainnet.alchemyapi.io/v2/${api_key}/getNFTs/`;
-    
-    if (!collection.length) {
-      var requestOptions = {
+    var requestOptions = {
         method: 'GET'
       };
-
+     
+    if (!collection.length) {
+    
       const fetchURL = `${baseURL}?owner=${wallet}`;
   
       nfts = await fetch(fetchURL, requestOptions).then(data => data.json())
